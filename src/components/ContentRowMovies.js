@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react'
 
 
 function ContentRowMovies() {
-    let moviesInDB = {
+    let allProducts = {
         title: 'Total de productos',
         color: 'primary',
         cuantity: 21,
@@ -17,23 +17,23 @@ function ContentRowMovies() {
 
     /* <!-- Total awards --> */
 
-    let totalAwards = {
+    let allUsers = {
         title: ' Total de Usuarios',
         color: 'success',
         cuantity: '79',
-        icon: 'fa-award'
+        icon: 'fa-users'
     }
 
     /* <!-- Actors quantity --> */
 
-    let actorsQuantity = {
+    let allCategories = {
         title: 'Total de categorías',
         color: 'warning',
         cuantity: '49',
         icon: 'fa-user-check'
     }
 
-    let cartProps = [moviesInDB, totalAwards, actorsQuantity];
+    let cartProps = [allProducts, allUsers, allCategories];
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -54,12 +54,12 @@ function ContentRowMovies() {
                     title: ' Total de Usuarios',
                     color: 'success',
                     cuantity: data[1].count,
-                    icon: 'fa-award'
+                    icon: 'fa-users'
                 }, {
                     title: 'Total de categorías',
                     color: 'warning',
                     cuantity: data[2].data.length,
-                    icon: 'fa-user-check'
+                    icon: 'fa-list'
                 }])
 
             })

@@ -1,16 +1,21 @@
 import React from 'react';
-import image from '../assets/images/artplace.png';
+import image from '../assets/images/artlogo.png';
 import ContentWrapper from './ContentWrapper';
 import GenresInDb from './GenresInDb';
 import LastMovieInDb from './LastMovieInDb';
 import ContentRowMovies from './ContentRowMovies';
+import TotalPlus from './TotalPlus'
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
 
 function SideBar(){
+    let spacing = '15px'
     return(
         <React.Fragment>
             {/*<!-- Sidebar -->*/}
+            
+
+            
             <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
@@ -27,7 +32,7 @@ function SideBar(){
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></Link>
+                        <span>Dashboard - artplace</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -40,7 +45,7 @@ function SideBar(){
                 <li className="nav-item">
                 <Link className="nav-link" to="/GenresInDb">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                        <span>Categorías</span>
                     </Link>
                 </li>
 
@@ -48,19 +53,20 @@ function SideBar(){
                 <li className="nav-item">
                     <Link className="nav-link" to="/LastMovieInDb">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
+                        <span>Último producto</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
+                <Link className="nav-link" to="/TotalPlus">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                        <span>Totales</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
+        
             {/*<!-- End of Sidebar -->*/}
 
             {/*<!-- Microdesafio 1 -->*/}
@@ -89,8 +95,8 @@ function SideBar(){
                 <Route path="/LastMovieInDb">
                     <LastMovieInDb />
                 </Route>
-                <Route path="/ContentRowMovies">
-                    <ContentRowMovies />
+                <Route path="/TotalPlus">
+                    <TotalPlus />
                 </Route>
                 <Route component={NotFound} />
             </Switch>
